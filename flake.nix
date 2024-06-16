@@ -12,5 +12,10 @@
   in
    {
     packages.${system}.default = import ./default.nix{inherit pkgs;};
+     devShells.${system}.default = pkgs.mkShell{
+      nativeBuildInputs =[
+        (import ./default.nix{inherit pkgs;})
+      ];
+     };
   };
 }
