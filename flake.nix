@@ -11,10 +11,10 @@
   pkgs = nixpkgs.legacyPackages.${system};
   in
    {
-    packages.${system}.default = import ./default.nix{inherit pkgs;};
+    packages.${system}.default = import ./nixos/default.nix{inherit pkgs;};
      devShells.${system}.default = pkgs.mkShell{
       nativeBuildInputs =[
-        (import ./default.nix{inherit pkgs;})
+        (import ./nixos/default.nix{inherit pkgs;})
       ];
      };
   };
