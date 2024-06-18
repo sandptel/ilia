@@ -7,7 +7,7 @@ pkgs.stdenv.mkDerivation {
   pname = "ilia";
   version = "main";
   
-  src = ./.;
+  src = ../.;
 
   nativeBuildInputs = [
 
